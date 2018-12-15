@@ -11,6 +11,8 @@ import { Layout, Nav, Body, Side, RSide, Foot } from './components/Layout/ui';
 
 import About from './components/about';
 import Project from './components/project';
+import Notes from './components/notes';
+import Links from './components/links';
 import './App.css';
 
 class App extends Component {
@@ -20,14 +22,32 @@ class App extends Component {
         <Nav>DevSPeter Homepage</Nav>
 
         <Router>
-          <Body>
-            <Switch>
-              <Route exact path="/" component={Project} />
-              <Route path="/about" component={About} />
-            </Switch>
-          </Body>
+          <React.Fragment>
+            <Body>
+              <Switch>
+                <Route exact path="/" component={Project} />
+                <Route path="/about" component={About} />
+                <Route path="/notes" component={Notes} />
+                <Route path="/links" component={Links} />
+              </Switch>
+            </Body>
+
+            <Side>
+              <NavLink className="nav-link" exact to="/">
+                Projects
+              </NavLink>
+              <NavLink className="nav-link" to="/notes">
+                Notes
+              </NavLink>
+              <NavLink className="nav-link" to="/links">
+                Links
+              </NavLink>
+              <NavLink className="nav-link" to="/about">
+                About
+              </NavLink>
+            </Side>
+          </React.Fragment>
         </Router>
-        <Side>Projects</Side>
         <RSide>right side</RSide>
         <Foot>This is the footer area. It should be near the bottom.</Foot>
       </Layout>

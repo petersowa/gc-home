@@ -8,3 +8,26 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
+
+.nav-link {
+  display: block;
+  background-color: transparent;
+  text-decoration: none;
+  color: white;
+  padding: 0.3rem;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+}
+
+.nav-link:hover {
+  cursor: pointer;
+  background-color: hsla(210, 20%, 80%, 0.2);
+}
+
+.nav-link.active {
+  background-color: hsla(210, 20%, 80%, 0.2);
+}
+
+* {
+  transition: all 0.15s ease-in-out;
+}
