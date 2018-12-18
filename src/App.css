@@ -28,6 +28,6 @@ body {
   background-color: hsla(210, 20%, 80%, 0.2);
 }
 
-* {
+div {
   transition: all 0.15s ease-in-out;
 }

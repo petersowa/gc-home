@@ -1,4 +1,13 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const slideOut = keyframes`
+  0% {
+    max-width: 100%;
+  }
+  100% {
+    max-width: 0;
+  }
+`;
 
 const Layout = styled.div`
   display: grid;
@@ -90,6 +99,7 @@ const Foot = styled.div`
 `;
 
 const Item = styled.div`
+  position: relative;
   background-color: hsl(210, 30%, 90%);
   border-radius: 0.5rem;
   padding: 0.2rem;
@@ -103,6 +113,21 @@ const Item = styled.div`
     hsl(210, 10%, 90%),
     hsl(210, 5%, 80%)
   );
+
+  overflow: none;
+  &::before {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    content: '';
+    color: white;
+    background-color: silver;
+    z-index: 100;
+    animation: ${slideOut} 0.3s ease-out;
+    animation-fill-mode: forwards;
+  }
 `;
 
 const P = styled.p`
